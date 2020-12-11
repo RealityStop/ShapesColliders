@@ -17,7 +17,7 @@ public class ShapesDiscCollider : ShapesCollider
     DiscType type;
     ArcEndCap cap;
     float radius;
-    float thiccness;
+    float thickness;
     float angRadStart;
     float angRadEnd;
 
@@ -36,7 +36,7 @@ public class ShapesDiscCollider : ShapesCollider
         // Recalc on variable changes
         // Would be good to have some type of OnValidate event for shapes
         if (type != disc.Type || cap != disc.ArcEndCaps || radius != disc.Radius 
-            || thiccness != disc.Thickness || angRadStart != disc.AngRadiansStart 
+            || thickness != disc.Thickness || angRadStart != disc.AngRadiansStart 
             || angRadEnd != disc.AngRadiansEnd)
             UpdateData();
     }
@@ -48,13 +48,13 @@ public class ShapesDiscCollider : ShapesCollider
         type = disc.Type;
         cap = disc.ArcEndCaps;
         radius = disc.Radius;
-        thiccness = disc.Thickness;
+        thickness = disc.Thickness;
         angRadStart = disc.AngRadiansStart;
         angRadEnd = disc.AngRadiansEnd;
-        Refresh(type, radius, thiccness, angRadStart, angRadEnd);
+        Refresh(type, radius, thickness, angRadStart, angRadEnd);
     }
 
-    protected void Refresh(DiscType _type, float _radius, float _thiccness, float _angRadStart, float _angRadEnd)
+    protected void Refresh(DiscType _type, float _radius, float _thickness, float _angRadStart, float _angRadEnd)
     {
         points.Clear();
         
@@ -72,14 +72,14 @@ public class ShapesDiscCollider : ShapesCollider
             case DiscType.Ring:
                 _angRadStart = 0;
                 _angRadEnd = 360;
-                _thiccness /= 2;
-                points.AddRange(GetCircle(_radius + _thiccness, _angRadStart, _angRadEnd));
-                points.AddRange(GetCircle(_radius + -_thiccness, _angRadStart, _angRadEnd, false, true));
+                _thickness /= 2;
+                points.AddRange(GetCircle(_radius + _thickness, _angRadStart, _angRadEnd));
+                points.AddRange(GetCircle(_radius + -_thickness, _angRadStart, _angRadEnd, false, true));
                 break;
             case DiscType.Arc:
-                _thiccness /= 2;
-                points.AddRange(GetCircle(_radius + _thiccness, _angRadStart, _angRadEnd));
-                points.AddRange(GetCircle(_radius + -_thiccness, _angRadStart, _angRadEnd, false, true));
+                _thickness /= 2;
+                points.AddRange(GetCircle(_radius + _thickness, _angRadStart, _angRadEnd));
+                points.AddRange(GetCircle(_radius + -_thickness, _angRadStart, _angRadEnd, false, true));
                 break;
             default:
                 break;

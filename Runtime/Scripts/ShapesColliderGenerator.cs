@@ -46,6 +46,11 @@ public class ShapesColliderGenerator : MonoBehaviour
                 gameObject.AddComponent<ShapesTriangleCollider>();
                 RemoveThis();
             }
+            else if (shapeRenderer is Quad)
+            {
+                gameObject.AddComponent<ShapesQuadCollider>();
+                RemoveThis();
+            }
             else
             {
                 Debug.LogError("Unsupported shape.  Check for updates to the Shapes Colliders package!");
