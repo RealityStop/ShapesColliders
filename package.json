@@ -1,6 +1,6 @@
 {
 	"name": "dev.shapes.colliders",
-	"version": "3.1.1",
+	"version": "1.1.1",
 	"displayName": "Shapes Colliders",
 	"description": "A collection of collider generators for Shapes.",
 	"unity": "2018.4",

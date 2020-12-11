@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Shapes;
 
+[AddComponentMenu("")]
 [ExecuteInEditMode]
 [RequireComponent(typeof(PolygonCollider2D))]
 [RequireComponent(typeof(Line))]

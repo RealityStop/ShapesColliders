@@ -5,7 +5,7 @@ using Shapes;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(PolygonCollider2D))]
-public class ShapesCollider : MonoBehaviour
+public abstract class ShapesCollider : MonoBehaviour
 {
     [Header("Gizmo Properties")]
     public bool drawGizmos = false;
