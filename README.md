@@ -1,6 +1,6 @@
-# ShapesColliders
+# Shapes Colliders
 
-Updated version of https://github.com/smundell/ShapesColliders to handle things like endcaps, install via UPM, simplify user interaction, and handle the new shapes.
+Updated version of https://github.com/smundell/ShapesColliders to handle things like endcaps, install via UPM, simplify user interaction, and handle the new shapes in the Shapes package
 
 
 ---------
