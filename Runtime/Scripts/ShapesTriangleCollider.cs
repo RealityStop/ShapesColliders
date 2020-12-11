@@ -27,7 +27,7 @@ public class ShapesTriangleCollider : ShapesCollider
 
     public override void UpdateData()
     {
-        if (poly == null) { return; }
+        if (poly == null || triangle == null) { return; }
 
         A = new Vector2(triangle.A.x, triangle.A.y);
         B = new Vector2(triangle.B.x, triangle.B.y);
